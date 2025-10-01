@@ -25,4 +25,11 @@ git clone https://github.com/Bakhtawr/book-club-app.git
 cd book-club-app
 
 
+
+Step 3: Build and Run the Project
+
 docker-compose up --build (Run this command to run the project in docker)
+
+
+\book-club-backend> docker exec -it book-club-frontend-backend-1 bash 
+# npx prisma migrate dev --name init
