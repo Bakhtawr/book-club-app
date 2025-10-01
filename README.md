@@ -33,3 +33,6 @@ docker-compose up --build (Run this command to run the project in docker)
 
 \book-club-backend> docker exec -it book-club-frontend-backend-1 bash 
 # npx prisma migrate dev --name init
+
+
+![Book Club Preview](./screen1.png)
