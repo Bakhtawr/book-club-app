@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: bookclub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123!@
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./book-club-backend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:password123%21%40@db:5432/bookclub
+
+
+
+  frontend:
+    build: .
+    ports:
+      - '4173:4173'
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: http://backend:3000
+
+volumes:
+  pgdata:

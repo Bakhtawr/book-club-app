@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "target": "ES2017",
+      "module": "CommonJS", // 👈 switch from ES2022
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "strict": true,
+      "skipLibCheck": true
+    }
+  }
